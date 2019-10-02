@@ -1,2 +1,8 @@
-*.swp
+**/*.swp
 .vs
+
+**/*.ilk
+**/*.pdb
+**/*.idb
+**/*.log
+**/*.tlog
