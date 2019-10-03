@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include "Boilerplate.h"
 #include "Fnt.h"
+#include "TSConsole.h"
 
 
 
@@ -15,9 +16,30 @@ double GetDeltaTime() {
 	return deltaTime;
 }
 
+
+
+void RenderConsoleBuffer(TSConsoleBuffer* buffer, SDLContext* context, Sprite* sprite) {
+	int w = buffer->width;
+	int h = buffer->height;
+	for (int y = 0; y < h; y++) {
+		for (int x = 0; x < w; x++) {
+			sprite->Blit(buffer->Get(x, y), x * 8, y * 8, context);
+		}
+	}
+}
+
+
+
+
+
 int main(int argc, char* argv[]) {
 
-	SDLContext context = InitSDL("Goodbye World", 800, 550);
+	int charW = 100;
+	int charH = 80;
+	int spriteW = 8;
+	int spriteH = 8;
+
+	SDLContext context = InitSDL("Goodbye World", charW * spriteW, charH * spriteH);
 	if (!context.success) {
 		DestroySDLContext(context);
 		SDL_Quit();
@@ -79,6 +101,19 @@ int main(int argc, char* argv[]) {
 		}
 
 		SDL_RenderClear(context.renderer);
+
+		
+
+		TSConsoleBuffer buffer;
+		buffer.Init(charW, charH);
+		const char* str = "Hej din gamla galosh";
+		int len = SDL_strlen(str);
+		for (int i = 0; i < len; i++) {
+			buffer.Set(CharToFnt(&str[i]), i + 3, 9);
+		}
+		RenderConsoleBuffer(&buffer, &context, &sprite);
+
+
 		sprite.Blit(Fnt::Heart, 0, 0, &context);
 		sprite.Blit(1, 8, 0, &context);
 		sprite.Blit(Fnt::A, 16, 0, &context);

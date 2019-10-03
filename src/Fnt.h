@@ -131,3 +131,138 @@ enum Fnt {
 	Auml = 992,
 	Ouml = 993
 };
+
+
+
+Fnt CharToFnt(const char* c) {
+	switch (*c) {
+	case ' ':
+		return Fnt::Blank;
+
+	case 'A':
+		return Fnt::A;
+	case 'a':
+		return Fnt::a;
+	case 'B':
+		return Fnt::B;
+	case 'b':
+		return Fnt::b;
+	case 'C':
+		return Fnt::C;
+	case 'c':
+		return Fnt::c;
+	case 'D':
+		return Fnt::D;
+	case 'd':
+		return Fnt::d;
+	case 'E':
+		return Fnt::E;
+	case 'e':
+		return Fnt::e;
+	case 'F':
+		return Fnt::F;
+	case 'f':
+		return Fnt::f;
+	case 'G':
+		return Fnt::G;
+	case 'g':
+		return Fnt::g;
+	case 'H':
+		return Fnt::H;
+	case 'h':
+		return Fnt::h;
+	case 'I':
+		return Fnt::I;
+	case 'i':
+		return Fnt::i;
+	case 'J':
+		return Fnt::J;
+	case 'j':
+		return Fnt::j;
+	case 'K':
+		return Fnt::K;
+	case 'k':
+		return Fnt::k;
+	case 'L':
+		return Fnt::L;
+	case 'l':
+		return Fnt::l;
+	case 'M':
+		return Fnt::M;
+	case 'm':
+		return Fnt::m;
+	case 'N':
+		return Fnt::N;
+	case 'n':
+		return Fnt::n;
+	case 'O':
+		return Fnt::O;
+	case 'o':
+		return Fnt::o;
+	case 'P':
+		return Fnt::P;
+	case 'p':
+		return Fnt::p;
+	case 'Q':
+		return Fnt::Q;
+	case 'q':
+		return Fnt::q;
+	case 'R':
+		return Fnt::R;
+	case 'r':
+		return Fnt::r;
+	case 'S':
+		return Fnt::S;
+	case 's':
+		return Fnt::s;
+	case 'T':
+		return Fnt::T;
+	case 't':
+		return Fnt::t;
+	case 'U':
+		return Fnt::U;
+	case 'u':
+		return Fnt::u;
+	case 'V':
+		return Fnt::V;
+	case 'v':
+		return Fnt::v;
+	case 'W':
+		return Fnt::W;
+	case 'w':
+		return Fnt::w;
+	case 'X':
+		return Fnt::X;
+	case 'x':
+		return Fnt::x;
+	case 'Y':
+		return Fnt::Y;
+	case 'y':
+		return Fnt::y;
+	case 'Z':
+		return Fnt::Z;
+	case 'z':
+		return Fnt::z;
+
+	case '.':
+		return Fnt::Punctuation;
+	case ',':
+		return Fnt::Comma;
+	case '!':
+		return Fnt::Exclamation;
+	case '?':
+		return Fnt::QuestionMark;
+	case '(':
+		return Fnt::ParanStart;
+	case ')':
+		return Fnt::ParanEnd;
+	case '<':
+		return Fnt::Lt;
+	case '>':
+		return Fnt::Gt;
+
+
+	default:
+		return Fnt::Blank;
+	}
+}

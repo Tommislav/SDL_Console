@@ -23,5 +23,11 @@
     <ClInclude Include="src\Boilerplate.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fnt.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TSConsole.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
